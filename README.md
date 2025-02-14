@@ -21,7 +21,7 @@ To be useful the app needs a defined configuration. You can get a default config
 python main.py -tc
 ```
 
->Note: the configuration directory is defined by the environment variable `\$CONFIG_COPYON` which default value is `\$HOME/.config/copyon`
+>Note: the configuration directory is defined by the environment variable `$CONFIG_COPYON` which default value is `$HOME/.config/copyon`
 
 After adding the default configuration you can run (to execute the processor 'upper'):
 ```
