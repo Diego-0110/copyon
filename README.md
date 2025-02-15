@@ -2,7 +2,7 @@
 
 A configurable util to transform the copied text in the clipboard.
 
-Define the processors with a Lua config file:
+Define the processors with a Lua config file (config.lua):
 ```lua
 ---@type Config
 return {
@@ -19,17 +19,17 @@ return {
 }
 ```
 
-Use a processor passing its id to the util:
+Use a processor passing its `id` to the app:
 ```
 python main.py upper
 ```
 
-Now, every time you copy something in the clipboard, the function process will be called:
+Now, every time you copy something in the clipboard, the function `process` will be called:
 ```
 You copy:
 "In a village in la Mancha, whose name I do not care to remember"
 
-The utils will add this to the clipboard:
+The app will add this to the clipboard:
 "IN A VILLAGE IN LA MANCHA, WHOSE NAME I DO NOT CARE TO REMEMBER"
 ```
 
@@ -58,22 +58,22 @@ positional arguments:
 options:
   -h, --help    show this help message and exit
   -l, --list    List processors
-  -t, --types   Add a types.lua file in $HOME_COPYON with type annotations
-  -c, --config  Add a config.lua file in $HOME_COPYON with the default config
+  -t, --types   Add a types.lua file in $CONFIG_COPYON with type annotations
+  -c, --config  Add a config.lua file in $CONFIG_COPYON with the default config
 
 Config directory: $CONFIG_COPYON (current value: ...)
 ```
 
 ## Usage
 
-To be useful the app needs a defined configuration. You can get a default configuration with types, using:
+To be useful the app needs a defined configuration. You can get a default configuration (config.lua) with types (types.lua), using:
 ```
 python main.py -tc
 ```
 
 >Note: the configuration directory is defined by the environment variable `$CONFIG_COPYON` which default value is `$HOME/.config/copyon` (Linux)
 
-After adding the default configuration you can edit it to add more processors:
+After adding the default configuration you can edit it (config.lua) to add more processors:
 ```lua
 ---@type Config
 return {
@@ -102,7 +102,7 @@ List of processors:
  - "new_processor": Description...
 ```
 
-Run a processor with:
+Run the new processor with:
 ```
 python main.py new_processor
 ```

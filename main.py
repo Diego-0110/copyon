@@ -96,9 +96,9 @@ def main():
     # -l -> args.list == true ...
     parser.add_argument('-l', '--list', action='store_true', help="List processors")
     parser.add_argument('-t', '--types', action='store_true',
-                        help="Add a types.lua file in $HOME_COPYON with type annotations")
+                        help="Add a types.lua file in $CONFIG_COPYON with type annotations")
     parser.add_argument('-c', '--config', action='store_true',
-                        help="Add a config.lua file in $HOME_COPYON with the default config")
+                        help="Add a config.lua file in $CONFIG_COPYON with the default config")
     # processor_id can be one valid id from the processors defined in the config or undefined
     parser.add_argument('processor_id', nargs='?', default=None)
 

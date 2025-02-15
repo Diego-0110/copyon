@@ -10,4 +10,4 @@ elif is_windows():
 else:
     raise Exception('invalid platform')
 
-CONFIG_COPYON = os.environ.get('HOME_COPYON', None) or def_config_dir
+CONFIG_COPYON = os.environ.get('CONFIG_COPYON', None) or def_config_dir
