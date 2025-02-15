@@ -1,3 +1,5 @@
+-- Default configuration
+
 ---@type Config
 return {
     processors = {

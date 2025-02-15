@@ -1,3 +1,5 @@
+-- Types annotations for config.lua:
+
 ---@class Processor
 ---@field id string unique identifier for the processor
 ---@field process function function to execute when the clipboard change

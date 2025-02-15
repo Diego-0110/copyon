@@ -1,7 +1,13 @@
 import os
+from utils import is_linux, is_macos, is_windows
 
-# TODO: Handle error when not exists
-HOME_USER = os.environ['HOME']
+if is_linux():
+    def_config_dir = os.path.join(os.environ.get('HOME'), '.config/copyon')
+elif is_macos():
+    def_config_dir = os.path.join(os.environ.get('HOME'), 'Application Support/copyon')
+elif is_windows():
+    def_config_dir = os.path.join(os.environ['LOCALAPPDATA'], 'copyon')
+else:
+    raise Exception('invalid platform')
 
-# TODO: define default dir for Windows and Mac
-CONFIG_COPYON = os.environ.get('HOME_COPYON', None) or f'{HOME_USER}/.config/copyon'
+CONFIG_COPYON = os.environ.get('HOME_COPYON', None) or def_config_dir
