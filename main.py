@@ -89,14 +89,14 @@ def main():
     parser = argparse.ArgumentParser(
         prog="copyon",
         description="Transform the text you save in the clipboard",
-        epilog="Config directory: $CONFIG_COPYON (default: $HOME/.config/copyon)",
+        epilog=f'Config directory: $CONFIG_COPYON (current value: {consts.CONFIG_COPYON})',
     )
     # Define alowed options
     # -l -t -c don't need additional parameters, only are set to true when are present
     # -l -> args.list == true ...
     parser.add_argument('-l', '--list', action='store_true', help="List processors")
     parser.add_argument('-t', '--types', action='store_true',
-                        help="Add a types.lua file in $HOME_COPYON with types annotations")
+                        help="Add a types.lua file in $HOME_COPYON with type annotations")
     parser.add_argument('-c', '--config', action='store_true',
                         help="Add a config.lua file in $HOME_COPYON with the default config")
     # processor_id can be one valid id from the processors defined in the config or undefined
